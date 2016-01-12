@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>Top Dog</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1348.17">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <style type="text/css">
+    body {background-color: #e4e4e4}
+    p.p2 {margin: 0.0px 30.0px 0.0px 30.0px; text-align: center; font: 12.0px 'Helvetica Neue Light'; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #333333}
+    p.p3 {margin: 0.0px 30.0px 0.0px 30.0px; text-align: left; font: 12.0px 'Helvetica Neue Light'; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #333333}
+    span.s1 {font-kerning: none}
+      input.input1
+      {
+          width: 70px;
+          text-align: right
+      }
+
+    /* right-align monetary amounts */
+    td[data-monetary-amount] {
+      text-align: right;
+    }
+
+    /* make the cells output their value */
+    td[data-monetary-amount]:after {
+      content: attr(data-monetary-amount);
+    }
+    /* make debit amounts show up in red */
+    td[data-monetary-amount^="-"]:after {
+      color: red;
+    }
+    
+  </style>
+
+</head>
+
+<body>
+
+<p/>
+<p/>
+<p/>
+<p/>
+<table align="center" width="300px">
+    <caption><h1 style="margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 24.0px 'Helvetica Neue Light'; color: #000000; -webkit-text-stroke: #000000"><span class="s1">Top Dog</span></h1></caption>
+ <thead>
+ 
+ <tbody>
+
+  <tr>
+   <td><img src="img\dog1.png" width="40px" height="40px" align="right"/>
+   <td align="center"> <input id="ip_dog1" class="input1" type="number" pattern="[0-9]*">
+   <td id="vdog1" align="right" width="70px" data-monetary-amount="0">
+
+  <tr>
+   <td><img src="img\dog2.png" width="40px" height="40px" align="right"/>
+   <td align="center"> <input id="ip_dog2" class="input1" type="number" pattern="[0-9]*">
+   <td id="vdog2" align="right" width="70px" data-monetary-amount="0">
+
+  <tr>
+   <td><img src="img\dog3.png" width="40px" height="40px" align="right"/>
+   <td align="center"> <input id="ip_dog3" class="input1" type="number" pattern="[0-9]*">
+   <td id="vdog3" align="right" width="70px" data-monetary-amount="0">
+
+  <tr>
+   <td><img src="img\dog4.png" width="40px" height="40px" align="right"/>
+   <td align="center"> <input id="ip_dog4" class="input1" type="number" pattern="[0-9]*">
+   <td id="vdog4" align="right" width="70px" data-monetary-amount="0">
+
+  <tr>
+   <td colspan="3"><button id="b_reset" style="width: 100%">Reset</button></td>
+</table>
+<script>
+    $("#b_reset").on("click", function () {
+        $("#ip_dog1").val("");
+        $("#vdog1").attr("data-monetary-amount", 0);
+        $("#ip_dog2").val("");
+        $("#vdog2").attr("data-monetary-amount", 0);
+        $("#ip_dog3").val("");
+        $("#vdog3").attr("data-monetary-amount", 0);
+        $("#ip_dog4").val("");
+        $("#vdog4").attr("data-monetary-amount", 0);
+    });
+
+        $("#ip_dog1").on("change", function () {
+            calculatePoints();
+        });
+        $("#ip_dog2").on("change", function () {
+            calculatePoints();
+        });
+        $("#ip_dog3").on("change", function () {
+            calculatePoints();
+        });
+        $("#ip_dog4").on("change", function () {
+            calculatePoints();
+        });
+        function calculatePoints(){
+
+            var dog1, dog2, dog3, dog4, sum;
+            dog1 = $("#ip_dog1").val();
+            dog1 = parseInt(dog1); 
+            if (isNaN(dog1)) dog1 = 0;
+
+            dog2 = $("#ip_dog2").val();
+            dog2 = parseInt(dog2);
+            if (isNaN(dog2)) dog2 = 0;
+
+            dog3 = $("#ip_dog3").val();
+            dog3 = parseInt(dog3);
+            if (isNaN(dog3)) dog3 = 0;
+
+            dog4 = $("#ip_dog4").val();
+            dog4 = parseInt(dog4);
+            if (isNaN(dog4)) dog4 = 0;
+
+            sum = dog1 + dog2 + dog3 + dog4;
+            dog1 = sum - 4 * dog1;
+            dog2 = sum - 4 * dog2;
+            dog3 = sum - 4 * dog3;
+            dog4 = sum - 4 * dog4;
+
+            $("#vdog1").attr("data-monetary-amount", dog1);
+            $("#vdog2").attr("data-monetary-amount", dog2);
+            $("#vdog3").attr("data-monetary-amount", dog3);
+            $("#vdog4").attr("data-monetary-amount", dog4);
+        };
+</script>
+</body>
+</html>
