@@ -7,10 +7,7 @@
   <title>Top Dog</title>
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="1348.17">
-  <script src="phonegap.js"></script>
-  <script src="cordova.js"></script>
-  <script src="jquery.min.js"></script>
-  <script src="js/index.js"></script>
+
   <style type="text/css">
     body {background-color: #e4e4e4}
     p.p2 {margin: 0.0px 30.0px 0.0px 30.0px; text-align: center; font: 12.0px 'Helvetica Neue Light'; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #333333}
@@ -18,7 +15,9 @@
     span.s1 {font-kerning: none}
       input.input1
       {
-          width: 70px;
+          width: 60px;
+          height: 15px;
+          font-size: 14px;
           text-align: right
       }
 
@@ -42,10 +41,7 @@
 
 <body>
 
-<p/>
-<p/>
-<p/>
-<p/>
+
 <table align="center" width="300px">
     <caption><h1 style="margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 24.0px 'Helvetica Neue Light'; color: #000000; -webkit-text-stroke: #000000"><span class="s1">Top Dog</span></h1></caption>
  <thead>
@@ -55,26 +51,28 @@
   <tr>
    <td><img src="img\dog1.png" width="40px" height="40px" align="right"/>
    <td align="center"> <input id="ip_dog1" class="input1" type="number" pattern="[0-9]*">
-   <td id="vdog1" align="right" width="70px" data-monetary-amount="0">
+   <td id="vdog1" font="14px" align="right" width="70px" data-monetary-amount="0">
 
   <tr>
    <td><img src="img\dog2.png" width="40px" height="40px" align="right"/>
    <td align="center"> <input id="ip_dog2" class="input1" type="number" pattern="[0-9]*">
-   <td id="vdog2" align="right" width="70px" data-monetary-amount="0">
+   <td id="vdog2" font="14px" align="right" width="70px" data-monetary-amount="0">
 
   <tr>
    <td><img src="img\dog3.png" width="40px" height="40px" align="right"/>
    <td align="center"> <input id="ip_dog3" class="input1" type="number" pattern="[0-9]*">
-   <td id="vdog3" align="right" width="70px" data-monetary-amount="0">
+   <td id="vdog3" font="14px" align="right" width="70px" data-monetary-amount="0">
 
   <tr>
    <td><img src="img\dog4.png" width="40px" height="40px" align="right"/>
    <td align="center"> <input id="ip_dog4" class="input1" type="number" pattern="[0-9]*">
-   <td id="vdog4" align="right" width="70px" data-monetary-amount="0">
+   <td id="vdog4" font="14px" align="right" width="70px" data-monetary-amount="0">
 
   <tr>
-   <td colspan="3"><button id="b_reset" style="width: 100%">Reset</button></td>
+   <td colspan="3"><button id="b_reset" font="16px" style="width: 100%; padding: 20px 10px">Reset</button></td>
 </table>
+<script src="phonegap.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>
     $("#b_reset").on("click", function () {
         $("#ip_dog1").val("");
@@ -130,5 +128,6 @@
             $("#vdog4").attr("data-monetary-amount", dog4);
         };
 </script>
+  
 </body>
 </html>
