@@ -71,7 +71,18 @@
   <tr>
    <td colspan="3"><button id="b_reset" font="16px" style="width: 100%; padding: 20px 10px">Reset</button></td>
 </table>
-<script src="phonegap.js"></script>
+        <div class="app">
+            <h1>PhoneGap</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>
     $("#b_reset").on("click", function () {
